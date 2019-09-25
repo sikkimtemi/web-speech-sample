@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>WEB-SPEECH-API SAMPLE</title>
+    <link href="main.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"
+      integrity="sha256-vK3UTo/8wHbaUn+dTQD0X6dzidqc5l7gczvH+Bnowwk="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="app" v-cloak>
+      <section class="section">
+        <div class="container">
+          {{ platform_name }}
+          <button v-on:click="startRec" id="start-btn" class="button">
+            <i class="fas fa-microphone"></i>録音開始
+          </button>
+          <button v-on:click="stopRec" id="stop-btn" class="button">
+            <i class="fas fa-microphone-slash"></i>録音終了
+          </button>
+          <button v-on:click="clearText" id="clear-btn" class="button">
+            <i class="fas fa-eraser"></i>クリア
+          </button>
+          <div>Status : {{ status }}</div>
+          <div class="interim">{{ interimTranscript }}</div>
+          <div>
+            Recognized :
+            <textarea
+              v-model="finalTranscript"
+              class="textarea"
+              rows="3"
+            ></textarea>
+          </div>
+          <div>
+            <i class="fas fa-exclamation-circle"></i>Google
+            Chrome以外のブラウザには対応していません。
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>

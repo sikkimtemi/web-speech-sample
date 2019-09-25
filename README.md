@@ -4,6 +4,10 @@ Web Speech APIを用いてブラウザで音声認識を行うサンプルです
 
 Google Chromeのみ対応してます。
 
+下記URLで公開しています。
+
+https://sikkimtemi.github.io/web-speech-sample/
+
 ## 録音開始
 
 「録音開始」をクリックし、マイクの使用を許可すると録音が開始されます。
